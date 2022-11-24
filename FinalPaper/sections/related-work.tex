@@ -1,0 +1,18 @@
+\section{Related Work}
+There is a lot of active study happening in the area of webassembly compilers, however we specifically focus on the ones that themseleves are written in webassembly that allows for client side compilations of other high/low level languages.
+
+\subsection*{WebAssembly}
+We take a lot of motivation from the paper that initially introduced webassembly to the world\cite{wasm}. The paper explains the gap in web devlopment which cannot inherenyly be solved by using javascript. This in depth describes major components WebAssembly as a language and a tool. One of the main goal being able to run cross language codes.
+
+\subsection*{Study on WebAssembly}
+With the introduction of the new byte code format, a lot of analysis in terms of performance and security has been done. The paper \cite{wasm-mech-verify} dicusses about the mechanisms of webassembly and how they verify the correctness of WASM. Then there ar multiple studies that go on to talk about performance of webassembly applications. \\
+The paper \cite{wasm-perf-0} talks about how performance of web assembly based applications are and how different parameters like JIT(Just In Time) compilation and other factors affect the performance. Further studies focus on performance comparisions and energy consumption of webassembly applications compared to native applications\cite{wasm-perf-comp-0}. An intersting study was one that used WebAssembly to study the memory model of javascript and propose changes to improve consistency\cite{wasm-js-memory}. \\
+A final research area is mainly geared towards security. The paper \textit{Everything Old is New Again}\cite{wasm-secur-0} talks about binary security of web assembly, as we are again now moving towards assembly format for the web. We see a paper that talks about the security in place for web assembly compilers\cite{wasmsecurity}. We would briefly refer to this to talk about security concerns that we find, and finally use the paper that does a performance analysis of webassembly compilers\cite{wasmtojs} as basis for our performance analysis.
+
+\subsection*{WebAssembly Applications \& Compilers}
+We look at some existing applications and compiler implementations to gain a better understanding. One such is an implementation of the e-commerce website ebay using WASM\cite{padmanabhan2020webassembly}. Then we look at an implementation of tensorflow backend which has been ported to web through WASM\cite{smilkov2020introducing}, this allows for running models on web through client. Before heading further we look at one of the most popular compilers that is written for C, emscripten\cite{zakai2011emscripten}. Emscripten is a compiler that compiles C/C++ to WASM. It is one of the most popular compilers for WASM.
+
+\subsection*{Bugs in WebAssembly Compilers}
+As we are focused more on the compilers that compile to WebAssembly, we use this paper as a base for our study\cite{bugsinwasm}. This paper discusses the bugs that are present in the WebAssembly compilers. We use this to compare and study its effects the implementation of Virtual Labs.
+
+We see that there isn't that major of work being done in fields of web assembly compilers, and nothing specific to running them on client side. This would vouch for the novelty of the paper and we use the remotely similar work as a base for our study. For this paper we will be specifically focussing on pyodide, a python distribution that runs on browser\cite{pyodide}. We will be using this as a base for our study and implementation. The source code for the same is available on github.\footnote{\url{https://github.com/pyodide/pyodide}}

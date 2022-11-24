@@ -1,0 +1,13 @@
+#+title: The Operational Semantics of Git
+#+latex_class: acmart
+#+latex_class_options: [acmlarge]
+
+#+include: setup.org
+
+* Models
+** Interactive Backup Machine
+** Automatic Backup Machine
+** Version Control Machine
+
+bibliography:base.bib
+bibliographystyle:ACM-Reference-Format

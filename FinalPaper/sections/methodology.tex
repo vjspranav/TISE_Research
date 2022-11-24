@@ -1,0 +1,23 @@
+\section{Methodology}
+Initially we do a collection of bugs from Pyodide repo. We then go ahead to analyse these bugs and try to compare them to the bugs proosed by Romano et al. \cite{bugsinwasm}. 
+
+\subsection{Bugs Collection}
+Our first goal is data collection. We follow the methods proposed followed by \cite{bugsinwasm} and use Github Search API\cite{githubsearchapi} and Github REST API\cite{githubrestapi} to collect all issues and pull requests. The project has a total of 880 Closed and 277 Open issues at the time of collection. For our use case, we filter out all the issues with label bug. This brings the total issues down tp 149 (closed) + 43 (open). We go through a detailed analysis of each issue and seggregate them based on the categories as shown in table \ref{tab:categories_bugs}. For the scope of the research course, we look at only the closed issues and filter out all duplicate bugs, won't-fix bugs and any bugs in the build time of pyodide. We majorly look at issues that are posed which are more focused with respect to pyodide as a framework itself or one of it's dependency CPython, emscripten or WebAssembly amongst others\footnote{The complete list of bugs is avaialble on sheets \url{https://stagbin.tk/pyodide_issues}}.
+
+\begin{table}[]
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Category}               & \textbf{Number of Unique Issues}  \\ \hline
+        Asyncify Synchronous Code       &           1                       \\ \hline
+        Incompatible Data Type          &           3                       \\ \hline
+        Memory Model Differences        &           7                       \\ \hline
+        Other Infrastructure Bug        &           12                      \\ \hline
+        Emulating Native Environment    &           1                       \\ \hline
+        Supporting Web API's            &           6                       \\ \hline
+        Pyodide Specific                &           21                      \\ \hline
+    \end{tabular}
+\caption{Categories of issues taken from \cite{bugsinwasm}}
+\label{tab:categories_bugs}
+\end{table}
+
+\subsection{Analysis}

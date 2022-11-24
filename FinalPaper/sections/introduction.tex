@@ -1,0 +1,11 @@
+\section{Introduction}
+WebAssembly (Wasm)\cite{wasm} is a web standard that defines a binary format and a corresponding assembly-like text format for executable code in web pages. The Wasm text format is designed as a portable, size-efficient, and embeddable format that runs with near-native performance and provides languages with low-level memory models such as C++ and Rust with a compilation target so that they can run on the web.
+A webassembly compiler is a tool that converts a code written in a high-level language like C++ or Rust into webassembly code. This code can be run on a web browser or on a web server. \\
+The main focus of this paper would be a study on such web compilers which themselves are written in webassembly. We first start with looking at the available solutions for the same. We then go on with pyodide as a base for our implementation. We then discuss the challenges that we faced in implementing a webassembly compiler on client side. We will broadly try to validate the study on WebAssembly compiler bugs\cite{bugsinwasm} \\
+We will use Virtual Labs as a platform, where we test out our implementation for validaing our study. \\
+We ask the following Research Questions to guide our study:
+\begin{itemize}
+    \item \textbf{RQ1:} How will the implementation of a webassembly compiler help in the development of web applications?
+    \item \textbf{RQ2:} What are the challenges in implementing a webassembly compiler on client side?
+    \item \textbf{RQ3:} How big of an impact do bugs in WebAssembly compilers have on the implementation requirement of Virtual Labs?
+\end{itemize}
