@@ -1,0 +1,94 @@
+\documentclass[11pt,letterpaper]{article}
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+\usepackage{hyperref}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\newcommand{\blue}[1]{\textcolor{RoyalBlue}{#1}}
+\newcommand{\fillme}[1]{\blue{\texttt{[Insert #1]}}}
+\newcommand{\instructions}[1]{\blue{\textit{#1}}}
+% uncomment the next two lines if you want the instructions to disappear.
+\renewcommand{\instructions}[1]{}
+\renewcommand{\fillme}[1]{}
+
+\begin{document}
+
+\title{TISE Research Project Proposal \\
+ Running WebAssembly Compilers on the Web}
+\author{VJS Pranavasri (vjs.pranavasri@research.iiit.ac.in)}
+\maketitle
+
+
+
+\instructions{If you are taking CS447 for 4 hours credit, you need to
+  either do a research project or a literature review.\\
+This is a \LaTeX template for the initial proposal for the research project,  but should also give you a start on the final report.\\
+The blue pieces of text  in this template are either instructions ({\tt$\backslash$instructions\{...\}}) or indicate where you need to fill in something ({\tt$\backslash$fillme\{...\}}).  
+You should replace all the {\tt$\backslash$fillme\{...\}} commands with your own text.
+To make the instructions disappear, please uncomment the
+\begin{center}
+{\tt$\backslash$renewcommand\{$\backslash$instructions\}[1]\{\}}\\
+%{\tt$\backslash$renewcommand\{$\backslash$fillme\}[1]\{\}}\\
+\end{center}
+lines in the preamble (just above  {\tt $\backslash$begin\{document\}} of this .tex file) by removing the leading \% marks, 
+recompile (run \LaTeX again) and submit the PDF on Compass.}
+
+\section*{Area of Interest}
+My area of interest is broadly under the umbrella of compilers. There are multiple unsolved problems and optimisations to be done across multiple version of compilers. However for this research I am aiming to look at a particular subset of them, compilers that compile to web assembly.
+
+\section*{Problem}
+The problem I am trying to look at is being able to run codes natively on browser. WebAssembly is meant to be solving this problem, but it requires a compilation done in advance before actually hosting it. \\
+I plan to research and find out ways in which a webassembly compiler will be able to compile High Level language codes to webassembly on the browser itself. This would allow for anyone to run(compile/interpret) any language natively on browser without having to have it compiled in advance. 
+As part of the research I'll be looking at different possible ways to implement the compiler.
+
+\section*{Importance}
+Multiple online coding and education platforms like Virtual Labs, would need an exclusive backend server running if they intend on having code compilation. WebAssembly has brought in many new innovations, and if we could utilize it's power to allow the compilation on browser itself it would save multiple such organisations a huge cost of having a backend server also at the same time, sideloading all the work to a client's browser.
+
+\section*{Current State of the Art} 
+The current state of the art when it comes to webassembly compilers are compilers like pyiodie, emscrippten and other such compilers\cite{9678776} which compile high level languages to wasm(webassembly binary format). This can be further be loaded and called directly on javascript through the webassembly run time which is shipped with all major browsers (Chrome, Firefox, Safari etc.) \\
+Another similar implementation is WasmFiddle\cite{WasmFiddleWasmFiddle} which is a backend service that compiles C/C++ to wasm and allows for running on javascript. 
+Both of these mentioned solutions haave the following problems
+\begin{itemize}
+  \item The high level language program (for ex C/C++) needs to be pre compiled before actually hosting on the web.
+  \item There is a backend that is doing the converting and sending the wasm result back.
+\end{itemize}
+What can help me in the process are the research done in perfomance, memory and security of WASM, as those are important aspects to consider when moving a complete compiler onto a browser whose memory is very different form a traditional filesystem.
+The paper\cite{10.5555/3358807.3358817} talks about performance comparisions that can help decide on trade off's.
+Also the paper\cite{10.1145/3337167.3337171} does a comprehesive study on memory safety of web assembly. These would be good points to start looking at.
+
+\section*{Proposed Solution}
+There are multiple ways to approach the solution. As part of the research I would want to compare these solutions and provide data which could be used to decide the feasibility and how best it could be implemented. Alongside also possibilly give a design idea. \\
+For the scope of the research we'll be talking in terms of implementing a web assembly compiler for C/C++, that will allow to compile C/C++ code to WASM on the browser. \\
+When we think of running a compiler in the browser the most obvious thought would be somehow to run gcc on browser that can help us compile. There are 3 ways of possibile ways:
+\begin{enumerate}
+  \item Running a complete linux environment on JS\cite{JSLinux}. This was already implemented, and this gives us a complete linux environment on browser, but it comes with a downside of network bandwith, it needs to download all packages before it can actually work. 
+  \item As LLVM/Clang are self compilable, we can use this property and compile clang to wasm. After which we will be having a wasm program that takes C code as input and goves binary as output, this should open us upto using this binary on JS. 
+  \item This final approach is one of the most promising approach, is JupyterLite\cite{JupyterLitea}. It is an implementaion of JupyterNotebook in WASM\cite{tuloupJupyterLiteJupyterWebAssembly2021} that allows complete running of notebook on Browser. The best part of this solution is the power of JupyterNotebook to run any language kernel. So this alone can allow almost every language to be compiled and run as long as a proper kernel for that language is written for JupyterLite.
+\end{enumerate}
+I wish to compare these solutions memory wise, complexity wise performance wise or come up with a design for a fully working implementation of one of these approaches,
+
+\section*{How is it different}
+All the existing solutions discussed only talk about being able to run existing modules/app in browser by compiling them to webassembly. The idea I have is to completely port the whole process to the browser allowing all the new code taken as input from the web page environment can be compiled live on the browser runtime on the client side without any backend dependency.
+\section*{Timeline}
+\begin{enumerate}
+  \item Week-1 \textbf{(19/08-24/09)}: Do an indepth literature study, get a concrete understanding of exisitng solutions and come up with Research Questions  
+  \item Week-2 \textbf{(25/09-02/10)}: Formally define my problem statement for research and come up with a rough draft of the solution or approach.
+  \item Week-3 \textbf{(03/10-09/10)}: Have a rough draft of the complete solution comparisions/design ready.
+  \item Week-4 \textbf{(10/10-16/10)}: Have a first draft of the paper ready for review.
+  \item Week-5 \textbf{(17/10-23/10)}: Take all inputs and discuss how to improve and start working on the final draft of the paper.
+\end{enumerate}
+This would be the ideal timeline. I will try to incrementally keep updating the timeline and the goals as and when there are developments with the research.
+
+\bibliography{mybib}
+\bibliographystyle{plain}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

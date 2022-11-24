@@ -1,0 +1,14 @@
+**/.DS_Store
+.DS_Store
+
+# Ignore all latex extra files
+**/*.aux
+**/*.bbl
+**/*.blg
+**/*.dvi
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.out
+**/*.synctex.gz
+**/*.toc

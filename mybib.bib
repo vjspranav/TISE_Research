@@ -1,0 +1,87 @@
+@INPROCEEDINGS{8326230,
+  author={Jeong, Hunseop and Jeong, Jinwoo and Park, Sangyong and Kim, Kwanghyuk},
+  booktitle={2018 IEEE International Conference on Consumer Electronics (ICCE)}, 
+  title={WATT : A novel web-based toolkit to generate WebAssembly-based libraries and applications}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={1-2},
+  doi={10.1109/ICCE.2018.8326230}}
+
+@INPROCEEDINGS{9678776,
+  author={Romano, Alan and Liu, Xinyue and Kwon, Yonghwi and Wang, Weihang},
+  booktitle={2021 36th IEEE/ACM International Conference on Automated Software Engineering (ASE)}, 
+  title={An Empirical Study of Bugs in WebAssembly Compilers}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={42-54},
+  doi={10.1109/ASE51524.2021.9678776}}
+
+@misc{WasmFiddleWasmFiddle,
+  author = {PaulNewling},
+  title = {{{WasmFiddle}}/Wasm\_fiddle},
+  howpublished = {https://github.com/WasmFiddle/wasm\_fiddle},
+  langid = {english},
+  file = {/Users/vjspranav/Zotero/storage/IT3EMNYC/wasm_fiddle.html}
+}
+
+
+@INPROCEEDINGS{9820136,
+  author={Rodrigues, João and Barreiros, Jorge},
+  booktitle={2022 17th Iberian Conference on Information Systems and Technologies (CISTI)}, 
+  title={Aspect-Oriented Webassembly Transformation}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={1-6},
+  doi={10.23919/CISTI54924.2022.9820136}}
+
+@inproceedings{10.5555/3358807.3358817, author = {Jangda, Abhinav and Powers, Bobby and Berger, Emery D. and Guha, Arjun}, title = {Not so Fast: Analyzing the Performance of Webassembly vs. Native Code}, year = {2019}, isbn = {9781939133038}, publisher = {USENIX Association}, address = {USA}, abstract = {All major web browsers now support WebAssembly, a low-level bytecode intended to serve as a compilation target for code written in languages like C and C++. A key goal of WebAssembly is performance parity with native code; previous work reports near parity, with many applications compiled to WebAssembly running on average 10% slower than native code. However, this evaluation was limited to a suite of scientific kernels, each consisting of roughly 100 lines of code. Running more substantial applications was not possible because compiling code to WebAssembly is only part of the puzzle: standard Unix APIs are not available in the web browser environment. To address this challenge, we build BROWSIX-WASM, a significant extension to BROWSIX [29] that, for the first time, makes it possible to run unmodified WebAssembly-compiled Unix applications directly inside the browser. We then use BROWSIX-WASM to conduct the first large-scale evaluation of the performance of WebAssembly vs. native. Across the SPEC CPU suite of benchmarks, we find a substantial performance gap: applications compiled to WebAssembly run slower by an average of 45% (Firefox) to 55% (Chrome), with peak slowdowns of 2:08\texttimes{} (Firefox) and 2:5\texttimes{} (Chrome). We identify the causes of this performance degradation, some of which are due to missing optimizations and code generation issues, while others are inherent to the WebAssembly platform.}, booktitle = {Proceedings of the 2019 USENIX Conference on Usenix Annual Technical Conference}, pages = {107–120}, numpages = {14}, location = {Renton, WA, USA}, series = {USENIX ATC '19} }
+
+@inproceedings{10.1145/3337167.3337171,
+author = {Disselkoen, Craig and Renner, John and Watt, Conrad and Garfinkel, Tal and Levy, Amit and Stefan, Deian},
+title = {Position Paper: Progressive Memory Safety for WebAssembly},
+year = {2019},
+isbn = {9781450372268},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3337167.3337171},
+doi = {10.1145/3337167.3337171},
+abstract = {WebAssembly (Wasm) is a low-level platform-independent bytecode language. Today, developers can compile C/C++ to Wasm and run it everywhere, at almost native speeds. Unfortunately, this compilation from C/C++ to Wasm also preserves classic memory safety vulnerabilities, such as buffer overflows and use-after-frees.New processor features (e.g., tagged memory, pointer authentication, and fine grain capabilities) are making it increasingly possible to detect, mitigate, and prevent such vulnerabilities with low overhead. Unfortunately, Wasm JITs and compilers cannot exploit these features. Critical high-level information---e.g., the size of an array---is lost when lowering to Wasm.We present MS-Wasm, an extension to Wasm that bridges this gap by allowing developers to capture low-level C/C++ memory semantics such as pointers and memory allocation in Wasm, at compile time. At deployment time, Wasm compilers and JITs can leverage these added semantics to enforce different models of memory safety depending on user preferences and what hardware is available on the target platform. This way, MS-Wasm offers a range of security-performance trade-offs, and enables users to move to progressively stronger models of memory safety as hardware evolves.},
+booktitle = {Proceedings of the 8th International Workshop on Hardware and Architectural Support for Security and Privacy},
+articleno = {4},
+numpages = {8},
+keywords = {Wasm, memory safety, tagged memory, WebAssembly},
+location = {Phoenix, AZ, USA},
+series = {HASP '19}
+}
+
+
+@misc{JSLinux,
+  author={Fabrice Bellard},
+  title = {{{JSLinux}}},
+  howpublished = {https://bellard.org/jslinux/}
+}
+
+
+@misc{JupyterLitea,
+  author={Jeremy Tuloup},
+  title = {{{JupyterLite}}},
+  howpublished = {https://jupyter.org/try-jupyter/lab/},
+  file = {/Users/vjspranav/Zotero/storage/3PB6GMMC/lab.html}
+}
+
+
+@misc{tuloupJupyterLiteJupyterWebAssembly2021,
+  title = {{{JupyterLite}}: {Jupyter} {{WebAssembly}} {Python}},
+  shorttitle = {{{JupyterLite}}},
+  author = {Tuloup, Jeremy},
+  year = {2021},
+  month = jul,
+  journal = {Medium},
+  abstract = {JupyterLite is a JupyterLab distribution that runs entirely in the web browser, backed by in-browser language kernels powered by\ldots},
+  howpublished = {https://blog.jupyter.org/jupyterlite-jupyter-\%EF\%B8\%8F-webassembly-\%EF\%B8\%8F-python-f6e2e41ab3fa},
+  langid = {english},
+  file = {/Users/vjspranav/Zotero/storage/UWKEH6WH/jupyterlite-jupyter-️-webassembly-️-python-f6e2e41ab3fa.html}
+}
