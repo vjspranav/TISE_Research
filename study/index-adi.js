@@ -2,7 +2,7 @@ const {Octokit} = require("@octokit/rest");
 const fs = require("fs");
 const path = require("path");
 
-const TOKEN='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'
+const TOKEN='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'
 const REPO = 'https://github.com/scrapy/scrapy'
 
 const octokit = new Octokit({
@@ -15,8 +15,8 @@ let page = 0;
 const getAllData = async () => {
     while (true) {
         const {data} = await octokit.request('GET /repos/{owner}/{repo}/issues', {
-            owner: 'zulip',
-            repo: 'zulip',
+            owner: 'scrapy',
+            repo: 'scrapy',
             state: 'closed', // ['all', 'open', 'closed']
             per_page: 100,
             page: page

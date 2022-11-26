@@ -1,1 +1,15 @@
 \section{Discussion}
+Multiple online coding and education platforms like Virtual Labs, would need an exclusive backend server running if they intend on having code compilation. WebAssembly has brought in many new innovations, and if we could utilize it$’$s power to allow the compilation on browser itself it would save multiple such organisations a huge cost of having a backend server also at the same time, sideloading all the work to a client$’$s browser. We discuss how we come to a solution for each of the Research Questions that we had asked.
+
+\subsection{RQ1: How will the implementation of a webassembly compiler help in the development of web applications?}
+We do not have a strong ground to state a fixed answer here, but a very obvious positive impact would be the reduction in the cost of hosting a web application. The cost of hosting a web application is directly proportional to the number of users it has. If we could reduce the cost of hosting a web application, it would be a huge benefit for the organisation.\footnote{When we talk about cost of hosting a web application, we specifically are talking about the cost of hosting a backend server for compiling codes.} \\
+This would also give an organisation power to use service worker and load these compilers without internet connection. This would allow the users to use the labs even when they are offline. \\
+We discuss how we could add more validation to this in future work.
+
+\subsection{RQ2: What are the challenges in implementing a webassembly compiler on client side?}
+The only challenge that we face was the fact that multiple features such as threads, SIMD, and GC are not supported by browsers. This is a major challenge as these features are very important for a compiler to be able to compile a high level language.\\ 
+Majority of these do not have any impact on our specific requirement which is geared towards a basic Python Programming Lab. \\
+
+\subsection{RQ3: How big of an impact do bugs in WebAssembly compilers have on the implementation requirement of Virtual Labs?}
+Although there are many bugs that exist in pyodide both resolved and unresolved, we see that the impact of these bugs is not very big on our implementation. We have been able to implement a basic Python Programming Lab with the help of pyodide. \\
+The only issue that we had was to setup interrupts due to lack of support for signals webassembly. This as discussed was resolved using Web Workers which are not supported by all browsers widely. \\
